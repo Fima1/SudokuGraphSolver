@@ -1,4 +1,3 @@
-import java.text.CollationElementIterator;
 import java.util.*;
 
 public class Graph{
@@ -65,8 +64,16 @@ public class Graph{
     }
 
     public void addEdge(int source, int destination){
-        vertices.get(source).neighbors.add(destination);
-        vertices.get(destination).neighbors.add(source);
+        List<Integer> v1 = vertices.get(source).neighbors;
+        List<Integer> v2 = vertices.get(destination).neighbors;
+        
+        if(!v1.contains(destination)){
+            v1.add(destination);
+        }
+       
+        if(!v2.contains(source)){
+            v2.add(source);
+        }
     }
 
     public void removeEdge(int source, int destination){
@@ -85,7 +92,7 @@ public class Graph{
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args){ // test code
         Graph g = new Graph();
 
         for(int i = 0; i < 6; i++){
