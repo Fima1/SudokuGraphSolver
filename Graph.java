@@ -2,18 +2,15 @@ import java.util.*;
 
 public class Graph{
 
-    private final String[] colors = {"none", "red", "orange", "yellow", "green", "blue", "purple", "pink", "cyan", "magenta"};
-    private final ArrayList<String> COLORS = new ArrayList<>(Arrays.asList(colors));
-
     private Map<Integer, Node> vertices = new HashMap<Integer, Node>(); // Map<ids, Nodes>
 
-    public class Node{
+    private class Node{
         private int id;
-        private String color;
+        private int color; 
         private ArrayList<Integer> neighbors;
 
-        Node(int id, String color, ArrayList<Integer> neighbors){
-            if(!COLORS.contains(color)){
+        Node(int id, int color, ArrayList<Integer> neighbors){
+            if(color != -1 && color < 0){
                 throw new IllegalArgumentException();
             }
             this.id = id;
@@ -22,19 +19,11 @@ public class Graph{
         }
 
         Node(int id){
-            this(id, "none", new ArrayList<Integer>());
+            this(id, -1, new ArrayList<Integer>());
         }
 
-        public void setColor(String color){
+        private void setColor(int color){
             this.color = color;
-        }
-
-        public String getColor(){
-            return color;
-        }
-
-        public List<Integer> getNeighbors(){
-            return neighbors;
         }
     }
 
@@ -85,6 +74,18 @@ public class Graph{
         return vertices;
     }
 
+    public int getColor(int id){
+        return vertices.get(id).color;
+    }
+
+    public void setColor(int id, int color){
+        vertices.get(id).setColor(color);
+    }
+
+    public List<Integer> getNeighbors(int id){
+        return vertices.get(id).neighbors;
+    }
+
     public void printVertices(){
         Collection<Node> allV = vertices.values();
         for(Node v: allV){
@@ -108,8 +109,6 @@ public class Graph{
         g.addEdge(4,0);
         g.addEdge(5,4);
         g.addEdge(5,2);
-
-        g.printVertices();
     }
 
 }

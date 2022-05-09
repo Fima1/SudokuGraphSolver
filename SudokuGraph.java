@@ -12,7 +12,7 @@ public class SudokuGraph {
         this.connectEdges();
     }
 
-    public void generateGraph(){
+    private void generateGraph(){
         for (int i = 1; i < 82; i++){
             graph.addById(i);
         }
@@ -32,7 +32,7 @@ public class SudokuGraph {
         return matrix;
     }
 
-    public List<Integer> getConnections(int row, int col){
+    private List<Integer> getConnections(int row, int col){
         int[][] matrix = this.getGridMatrix();
         ArrayList<Integer> connections = new ArrayList<Integer>();
 
@@ -124,7 +124,7 @@ public class SudokuGraph {
         }
     }
 
-    public void connectEdges(){
+    private void connectEdges(){
         int[][] matrix = this.getGridMatrix();
 
         HashMap<Integer, List<Integer>> headConnections = new HashMap<Integer, List<Integer>>();
@@ -138,6 +138,22 @@ public class SudokuGraph {
         }
 
         this.connectNodes(headConnections);
+    }
+
+    public int getColor(int id){
+        return graph.getColor(id);
+    }
+
+    public void setColor(int id, int color){
+        graph.setColor(id, color);
+    }
+
+    public List<Integer> getNeighbors(int id){
+        return graph.getNeighbors(id);
+    }
+
+    public int getTotalNodes(){
+        return this.totalNodes;
     }
 
     public static void main(String[] args){
