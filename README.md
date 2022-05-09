@@ -4,11 +4,12 @@ Sudoku solver that uses graph coloring to find solutions
 ## Representing Sudoku as a graph
 A Sudoku board can be viewed as a graph with each number field corresponding to a single vertex. Since each row, column and 3x3 block must contain all numbers 1-9, each vertex is connected to every other vertex in its row, column and block. Connected vertices cannot have the same color. Each 3x3 block is a complete graph on 9 vertices (K9), so the graph has a chromatic number of 9 — it requires at least 9 colors to solve. Since valid solutions are possible, the graph is 9-colorable.    
 ![alt text](https://github.com/Fima1/SudokuGraphSolver/blob/main/sudokugraph_image.png?raw=true)
-
+## Graph implementation
+The Graph class contains an implementation of the graph data structure. The class stores a mapping of ids to nodes. Each node contains a color and a list of the nodes it is adjacent to. This class allows us to modify the vertices by changing node mappings and modify the edges by manipulating the adjacency lists maintained by each node.
 ## Coloring algorithm
 This project implements a Greedy coloring algorithm using recursive backtracking. Each vertex is assigned the smallest color (1-9) not shared by any of its neighbors. The function recursively colors the rest of the vertices or backtracks if no solution is found.
 
-## Sample output:
+## Sample output
 ```
 Before Solving:
 
