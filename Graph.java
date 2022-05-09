@@ -70,10 +70,6 @@ public class Graph{
         vertices.get(destination).neighbors.remove(source);
     }
 
-    public Map<Integer, Node> getVertices(){
-        return vertices;
-    }
-
     public int getColor(int id){
         return vertices.get(id).color;
     }
@@ -109,6 +105,8 @@ public class Graph{
         g.addEdge(4,0);
         g.addEdge(5,4);
         g.addEdge(5,2);
+
+        g.printVertices();
     }
 
 }

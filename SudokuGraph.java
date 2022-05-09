@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class SudokuGraph {
+
     private final int NUM_col = 9;
     private final int NUM_row = 9;
     

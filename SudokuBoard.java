@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class SudokuBoard {
+    // Class containing the sudoku board and the graph coloring algorithm
     
     SudokuGraph graph = new SudokuGraph();
     int[][] matrix = graph.getGridMatrix();
@@ -85,7 +86,7 @@ public class SudokuBoard {
         }
     }
 
-    private boolean solveColoring(int id, int numC, List<Integer> given){
+    private boolean solveColoring(int id, int numC, List<Integer> given){ // coloring algorithm 
         if(id == graph.getTotalNodes() + 1){
             return true;
         }
@@ -130,7 +131,7 @@ public class SudokuBoard {
     public static void main(String[] args){
         SudokuBoard b = new SudokuBoard();
         
-      /*  int[][] board = {
+      int[][] board = {
             {0,0,0,2,6,0,7,0,1},
             {6,8,0,0,7,0,0,9,0},
             {1,9,0,0,0,4,5,0,0},
@@ -141,9 +142,9 @@ public class SudokuBoard {
             {0,4,0,0,5,0,0,3,6},
             {7,0,3,0,1,8,0,0,0}
         };
-      */
       
-        int[][] board = {
+      
+        int[][] board1 = {
             {2,0,0,3,0,0,0,0,0},
             {8,0,4,0,6,2,0,0,3},
             {0,1,3,8,0,0,2,0,0},
@@ -155,7 +156,7 @@ public class SudokuBoard {
             {0,0,0,0,0,1,0,0,2}
         };
         
-        b.setBoard(board);
+        b.setBoard(board1);
         
         System.out.println("Before Solving:");
         System.out.println();
