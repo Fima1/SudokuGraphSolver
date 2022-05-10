@@ -9,6 +9,14 @@ The Graph class contains an implementation of the graph data structure. The clas
 ## Coloring algorithm
 This project implements a Greedy coloring algorithm using recursive backtracking. Each vertex is assigned the smallest color (1-9) not shared by any of its neighbors. The function recursively colors the rest of the vertices or backtracks if no solution is found.
 
+## Installation and launch
+- Install [Java Development Kit](https://code.visualstudio.com/docs/java/java-tutorial)
+- Clone the repository using
+```
+Git clone https://github.com/Fima1/SudokuGraphSolver
+```
+- Run SudokuBoard.java
+
 ## Sample output
 ```
 Before Solving:
