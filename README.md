@@ -10,7 +10,7 @@ The Graph class contains an implementation of the graph data structure. The clas
 This project implements a Greedy coloring algorithm using recursive backtracking. Each vertex is assigned the smallest color (1-9) not shared by any of its neighbors. The function recursively colors the rest of the vertices or backtracks if no solution is found.
 
 ## Installation and launch
-- Install [Java Development Kit](https://code.visualstudio.com/docs/java/java-tutorial)
+- Install [Java Development Kit + VScode](https://code.visualstudio.com/docs/java/java-tutorial) pack
 - In VScode, press “Ctrl+`” to open a terminal
 - Clone the repository using
   ```
