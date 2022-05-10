@@ -11,10 +11,11 @@ This project implements a Greedy coloring algorithm using recursive backtracking
 
 ## Installation and launch
 - Install [Java Development Kit](https://code.visualstudio.com/docs/java/java-tutorial)
+- In VScode, press “Ctrl+`” to open a terminal
 - Clone the repository using
-```
-Git clone https://github.com/Fima1/SudokuGraphSolver
-```
+  ```
+  git clone https://github.com/Fima1/SudokuGraphSolver
+  ```
 - Run SudokuBoard.java
 
 ## Sample output
